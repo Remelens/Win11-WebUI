@@ -1,18 +1,3 @@
-body {
-    font-family: Menlo, Monaco, Consolas, "Lucida Console", "Ubuntu Mono","Microsoft YaHei UI","PingFang SC","Noto Sans CJK SC", "SimHei";
-    font-size: 87.5%;
-    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/bxq0pdud.png') ;
-    /*洛谷图床-win11背景-开花*/
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-position: center;
-    margin:0;
-}
-html,body{
-    width:100%;
-    height:100%;
-}
 a{
     color: #3498db;
     text-decoration: none;
@@ -42,6 +27,9 @@ input[type="text"].win11ui,
 input[type="email"].win11ui,
 input[type="url"].win11ui,
 input[type="password"].win11ui,
+input[type="number"].win11ui,
+input[type="date"].win11ui,
+input[type="time"].win11ui,
 textarea.win11ui{
     padding: 5px;
     border: 1px solid #303030;
@@ -59,12 +47,19 @@ textarea.win11ui {
 }
 textarea.win11ui,input.win11ui{
     outline:none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin:0;
 }
 .input.win11ui,
 input[type="text"].win11ui,
 input[type="email"].win11ui,
 input[type="url"].win11ui,
 input[type="password"].win11ui,
+input[type="number"].win11ui,
+input[type="date"].win11ui,
+input[type="time"].win11ui,
 input.text.win11ui,textarea.win11ui{
     border-radius: 3px;
     border:none;
@@ -77,23 +72,27 @@ input[type="text"].win11ui:focus,
 input[type="email"].win11ui:focus,
 input[type="url"].win11ui:focus,
 input[type="password"].win11ui:focus,
+input[type="number"].win11ui:focus,
+input[type="date"].win11ui:focus,
+input[type="time"].win11ui:focus,
 input.win11ui.text:focus,textarea.win11ui:focus{
     box-shadow: inset 0px -1px 0px 0px #007bff;
     -webkit-box-shadow: inset 0px -2px 0px 0px #007bff;
     transition: all 0.2s;
 }
 /*按钮css*/
-button.win11ui,input[type="submit"].win11ui{
+button.win11ui,input[type="submit"].win11ui,
+input[type="file"].win11ui::file-selector-button,
+input[type="button"].win11ui{
     display:inline-block;
     text-align: center;
     border:0.9px solid #aaa;
     border-radius: 2.5px;
     background: #fff;
     color:#000;
-    width:80px;
+    min-width:80px;
     padding:4px 0;
     margin:0 5px;
-    font-size:90%;
     cursor: default;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -103,21 +102,92 @@ button.win11ui,input[type="submit"].win11ui{
     line-height: 20px;
     transition: all 0.2s;
 }
-button.win11ui:hover,input[type="submit"].win11ui:hover{
+button.win11ui:hover,input[type="submit"].win11ui:hover,
+input[type="file"].win11ui::file-selector-button:hover,
+input[type="button"].win11ui:hover{
     border-color: #0078d4;
     background:#e0eef9;
     transition: all 0.2s;
 }
-button.win11ui:active,input[type="submit"].win11ui:active{
+button.win11ui:active,input[type="submit"].win11ui:active,
+input[type="file"].win11ui::file-selector-button:active,
+input[type="button"].win11ui:active{
     border-color: #005499;
     background:#CCE4F7;
     transition: all 0.2s;
 }
+input[type="color"].win11ui{
+    border:1px solid #aaa;
+    padding:0;
+    height:20px;
+    width:30px;
+    transition: all 0.2s;
+}
+input[type="color"].win11ui:hover{
+    border-color: #0078d4;
+    transition: all 0.2s;
+}
+input[type="color"].win11ui:active{
+    border-color: #005499;
+    transition: all 0.2s;
+}
+/*选择css*/
+input[type="radio"].win11ui::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    box-shadow: inset 0px 0px 0px 1px #aaa;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    transition: all 0.3s;
+}
+input[type="radio"].win11ui:hover::after{
+    box-shadow: inset 0px 0px 0px 1px #429ce3;
+    transition: all 0.3s;
+}
+input[type="radio"].win11ui:checked:hover::after{
+    box-shadow: inset 0px 0px 0px 3.5px #429ce3;
+    transition: all 0.3s;
+}
+input[type="radio"].win11ui:checked::after {
+    box-shadow: inset 0px 0px 0px 4.5px #007bff;
+    transition: all 0.3s;
+    background-color: white;
+}
+input[type="checkbox"].win11ui{
+    width: 14px;
+    height: 14px;
+    border: none;
+    box-shadow: inset 0px 0px 0px 1px #aaa;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: all 0.3s;
+    margin:0;
+}
+input[type="checkbox"].win11ui:hover{
+    box-shadow: inset 0px 0px 0px 1px #429ce3;
+    transition: all 0.3s;
+}
+input[type="checkbox"].win11ui:checked{
+    box-shadow: inset 0px 0px 0px 1px #007bff;
+    background-color: #007bff;
+    transition: all 0.3s;
+}
+input[type="checkbox"].win11ui:checked::after {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 8px;
+    box-shadow: inset -1px -1px 0px 0.5px #fff;
+    transform: rotate(45deg);
+    margin-left:35%;
+    margin-top:18%;
+    float:left;
+}
 /*窗口样式*/
 .win11-window{
     position:absolute;
-    width: 600px;
-    height: 450px;
     border-radius: 6px;
     -webkit-transform-origin: center;
     transform-origin: center;
@@ -187,11 +257,9 @@ button.win11ui:active,input[type="submit"].win11ui:active{
     margin: auto 0;
 }
 .win11-window .win-main{
-    width: 100%;
     border-radius: 0 0 6px 6px;
     background:#e9e9e9;
     position: relative;
-    height:100%;
     top:0;
     left:0;
 }
@@ -200,23 +268,23 @@ button.win11ui:active,input[type="submit"].win11ui:active{
 }
 /*暗色模式*/
 @media (prefers-color-scheme: dark) {
-    body{
-        background-image: url(https://cdn.luogu.com.cn/upload/image_hosting/o2q3fsbe.png);
-    }
     a:hover, a:active {
         color: #86c0ff;
         transition:all 0.2s;
     }
-    button.win11ui,input[type="submit"].win11ui{
+    button.win11ui,input[type="submit"].win11ui,
+    input[type="file"].win11ui::file-selector-button{
         border-color: #777;
         background:#444;
         color:#fff;
     }
-    button.win11ui:hover,input[type="submit"].win11ui:hover{
+    button.win11ui:hover,input[type="submit"].win11ui:hover,
+    input[type="file"].win11ui::file-selector-button:hover{
         border-color: #999;
         background:#555;
     }
-    button.win11ui:active,input[type="submit"].win11ui:active{
+    button.win11ui:active,input[type="submit"].win11ui:active,
+    input[type="file"].win11ui::file-selector-button:active{
         border-color: #aaa;
         background:#777;
     }
@@ -242,9 +310,37 @@ button.win11ui:active,input[type="submit"].win11ui:active{
     input[type="email"].win11ui,
     input[type="url"].win11ui,
     input[type="password"].win11ui,
+    input[type="number"].win11ui,
+    input[type="date"].win11ui,
+    input[type="time"].win11ui,
     textarea.win11ui{
         width: 100%;
         background: #303030;
         color:#eee;
     }
+    input[type="checkbox"].win11ui{
+        background-color: inherit;
+    }
+    input[type="radio"].win11ui::after {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        box-shadow: inset 0px 0px 0px 1px #aaa;
+        border-radius: 50%;
+        background-color: inherit;
+        transition: all 0.2s;
+    }
+    input[type="radio"].win11ui:hover::after{
+        box-shadow: inset 0px 0px 0px 1px #007bff;
+        transition: all 0.2s;
+    }
+    input[type="radio"].win11ui:checked:hover::after{
+        box-shadow: inset 0px 0px 0px 3.5px #007bff;
+        transition: all 0.2s;
+    }
+    input[type="radio"].win11ui:checked::after {
+        box-shadow: inset 0px 0px 0px 4.5px #007bff;
+        transition: all 0.2s;
+    }    
 }

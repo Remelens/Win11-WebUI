@@ -1,6 +1,29 @@
 <link rel="stylesheet" href="./css/style.css">
 
-<div class="win11-window" style="width:300px;height:300px;position: absolute;left:10px;top:30px;">
+<style>
+body {
+    font-family: Menlo, Monaco, Consolas, "Lucida Console", "Ubuntu Mono","Microsoft YaHei UI","PingFang SC","Noto Sans CJK SC", "SimHei";
+    font-size: 14px;
+    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/bxq0pdud.png') ;
+    /*洛谷图床-win11背景-开花*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position: center;
+    margin:0;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+@media (prefers-color-scheme: dark) {
+    body{
+        background-image: url(https://cdn.luogu.com.cn/upload/image_hosting/o2q3fsbe.png);
+    }
+}
+</style>
+
+<div class="win11-window" style="position: absolute;left:10px;top:30px;">
     <div class="win-header">
         <div class="win-title" data-op="0">
             <div class="win-uicon">
@@ -12,8 +35,15 @@
             <div class="win-uicon close"><img width="14" src="images/close.png" alt=""></div>
         </div>
     </div>
-    <div class="win-main">
-        你好，世界。
-	<input type="text" class="win11ui">
+    <div class="win-main" style="padding:10px;">
+        Hello,world!<br><br>
+    <button class="win11ui">test</button><br><br>
+	<input type="file" class="win11ui"><br><br>
+    <input type="text" class="win11ui" value="text" placeholder="Type text here..."><br><br>
+    <input type="radio" class="win11ui" name="t1"><label>radio1</label> <input type="radio" class="win11ui" name="t1"><label>radio2</label>
+    <input type="checkbox" class="win11ui" name="t2"><label>check1</label> <input type="checkbox" class="win11ui" name="t2"><label>check2</label><br><br>
+    <input type="date" class="win11ui"><br><br>
+    <input type="time" class="win11ui"><br><br>
+    <input type="color" class="win11ui"><br><br>
     </div>
 </div>
