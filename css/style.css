@@ -190,8 +190,17 @@ input[type="checkbox"].win11ui:checked::after {
 input[type="range"].win11ui{
     background:none;
 }
-input[type="range"].win11ui::-webkit-slider-thumb,
-input[type="range"].win11ui::-moz-range-thumb {
+input[type="range"].win11ui::-webkit-slider-thumb{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    box-shadow: inset 0px 0px 0px 4.5px #007bff;
+    border:0px;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.3s;
+}
+input[type="range"].win11ui::-moz-range-thumb{
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -218,8 +227,9 @@ input[type="range"].win11ui::-moz-range-thumb:active{
     transition: all 0.3s;
 }
 input[type="range"].win11ui::-webkit-slider-runnable-track{
-    background: #007bff;
+    background: none;
     border-radius: 1em;
+    box-shadow: inset 0px 0px 0px 4.5px #007bff;
 }
 input[type="range"].win11ui::-moz-range-progress {
     background: #007bff;
