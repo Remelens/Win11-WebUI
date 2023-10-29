@@ -117,6 +117,7 @@ input[type="button"].win11ui:active{
     transition: all 0.2s;
 }
 input[type="color"].win11ui{
+    border-radius:none;
     border:1px solid #aaa;
     padding:0;
     height:20px;
@@ -219,8 +220,11 @@ input[type="checkbox"].win11ui:checked::after {
     flex-grow: 1;
     align-items: center;
 }
+.win11-window .win-header .win-title span{
+    margin-left:10px;
+}
 .win11-window .win-header .win-title .win-uicon {
-    margin: 0 10px 0 6px;
+    margin: 0 0 0 6px;
     display:inline-block;
 }
 .win11-window .win-header .win-buttonbar{
@@ -239,18 +243,18 @@ input[type="checkbox"].win11ui:checked::after {
     -khtml-user-select: none;
     user-select: none;
 }
-.win11-window .win-header .win-buttonbar .win-uicon.min:hover,.win-buttonbar .win-uicon.max:hover{
+.win11-window .win-header .win-buttonbar .win-uicon.win-min:hover,.win-buttonbar .win-uicon.win-max:hover{
     transition: all 0.2s;
     background:#aaaaaa55;
 }
-.win11-window .win-header .win-buttonbar .win-uicon.close{
+.win11-window .win-header .win-buttonbar .win-uicon.win-close{
     border-radius: 0 6px 0 0;
 }
-.win11-window .win-header .win-buttonbar .win-uicon.close:hover{
+.win11-window .win-header .win-buttonbar .win-uicon.win-close:hover{
     transition: all 0.2s;
     background:#ff0000;
 }
-.win11-window .win-header .win-buttonbar .win-uicon.close:hover img{
+.win11-window .win-header .win-buttonbar .win-uicon.win-close:hover img{
     filter:invert(100%);
 }
 .win11-window .win-header .win-buttonbar .win-uicon img{
@@ -262,6 +266,7 @@ input[type="checkbox"].win11ui:checked::after {
     position: relative;
     top:0;
     left:0;
+    height:100%;
 }
 .win11-window h2{
     margin:0;
@@ -302,7 +307,7 @@ input[type="checkbox"].win11ui:checked::after {
     .win11-window .win-header .win-buttonbar .win-uicon img{
         filter: invert(100%);
     }
-    .win11-window .win-header .win-buttonbar .win-uicon.min:hover,.win-buttonbar .win-uicon.max:hover{
+    .win11-window .win-header .win-buttonbar .win-uicon.win-min:hover,.win-buttonbar .win-uicon.win-max:hover{
         background:#99999977;
     }
     .input.win11ui,input.text.win11ui,

@@ -1,5 +1,7 @@
+<!DOCTYPE html>
+<html><head>
 <link rel="stylesheet" href="./css/style.css">
-
+<script src="./js/script.js"></script>
 <style>
 body {
     font-family: Menlo, Monaco, Consolas, "Lucida Console", "Ubuntu Mono","Microsoft YaHei UI","PingFang SC","Noto Sans CJK SC", "SimHei";
@@ -22,35 +24,27 @@ html,body{
     }
 }
 </style>
+</head>
+<body>
+</body>
+    <script>
+        var win1=new Win11Window();
+        win1.id='mainwin';
+        win1.position.x=15;
+        win1.position.y=15;
+        win1.icon='./images/program.png';
+        win1.title='TestWindow';
+        win1.content=`        Hello,world!<br><br>
+            <button class="win11ui">test</button><br><br>
+            <input type="file" class="win11ui"><br><br>
+            <input type="text" class="win11ui" value="text" placeholder="Type text here..."><br><br>
+            <input type="radio" class="win11ui" name="t1"><label>radio1</label> <input type="radio" class="win11ui" name="t1"><label>radio2</label>
+            <input type="checkbox" class="win11ui" name="t2"><label>check1</label> <input type="checkbox" class="win11ui" name="t2"><label>check2</label><br><br>
+            <input type="date" class="win11ui"><br><br>
+            <input type="time" class="win11ui"><br><br>
+            <input type="color" class="win11ui"><br><br>`;
+        var a=win1.createWindow();
+        //a.className+=' win-disable';
+        </script>
 
-<div class="win11-window" style="position: absolute;left:10px;top:30px;">
-    <div class="win-header">
-        <div class="win-title" data-op="0">
-            <div class="win-uicon">
-                <img width="14" src="./images/program.png" alt=""></div><span>Window</span>
-            </div>
-        <div class="win-buttonbar">
-            <div class="win-uicon min"><img width="12" src="./images/min.png" alt=""></div>
-            <div class="win-uicon max"><img width="12" src="./images/max.png" alt=""></div>
-            <div class="win-uicon close"><img width="14" src="images/close.png" alt=""></div>
-        </div>
-    </div>
-    <div class="win-main" style="padding:10px;">
-        Hello,world!<br><br>
-    <button class="win11ui">button</button><br><br>
-	<input type="file" class="win11ui"><br><br>
-    <input type="text" class="win11ui" value="text" placeholder="Type text here..."><br><br>
-    <input type="radio" class="win11ui" name="t1"><label>radio1</label> <input type="radio" class="win11ui" name="t1"><label>radio2</label>
-    <input type="checkbox" class="win11ui" name="t2"><label>check1</label> <input type="checkbox" class="win11ui" name="t2"><label>check2</label><br><br>
-    <input type="date" class="win11ui"><br><br>
-    <input type="time" class="win11ui"><br><br>
-    <input type="color" class="win11ui"><br><br>
-    <hr/>
-    <h2>简介</h2>
-    <p>
-  这是一个仿Win11的UI库，效果可以根据上面的代码体验一下（<br>
-  窗口管理代码正在进一步开发中……同时为此感谢Dr0和cmd1152
-  </p>
-  </div>
-</div>
-
+</html>
