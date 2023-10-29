@@ -230,6 +230,8 @@ input[type="range"].win11ui::-webkit-slider-runnable-track{
     background: #007bff;
     border-radius: 1em;
     height:5px;
+    padding:5px 0;
+    /*Love u webkit...*/
 }
 input[type="range"].win11ui::-moz-range-progress {
     background: #007bff;
