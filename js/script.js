@@ -136,6 +136,7 @@ class Win11Window {
         2:max
         */
     isButtonDisabled(cls){
+        if(this.cls===2&&cls!==0){return;}
         switch(cls){
             case 0:
                 return $id(this.id).querySelector('.win-close').classList.contains('winbtn-disable');
@@ -146,6 +147,7 @@ class Win11Window {
         }
     }
     enableButton(cls) {
+        if(this.cls===2&&cls!==0){return;}
         switch(cls){
             case 0:
                 if(this.isButtonDisabled(cls)){
@@ -165,6 +167,7 @@ class Win11Window {
         }
     }
     disableButton(cls) {
+        if(this.cls===2&&cls!==0){return;}
         switch(cls){
             case 0:
                 if(!this.isButtonDisabled(cls)){
@@ -192,14 +195,16 @@ class Win11Window {
 
         //use in createWindow:
         //this.bindEventListeners(parentNode);
-        node.getElementsByClassName('win-min')[0].addEventListener('click', (event) => {
-            if (node.classList.contains("win-disable")||this.isButtonDisabled(1)) { return; }
-            this.onMinimize(event);
-        });
-        node.getElementsByClassName('win-max')[0].addEventListener('click', (event) => {
-            if (node.classList.contains("win-disable")||this.isButtonDisabled(2)) { return; }
-            this.onMaxmise(event);
-        });
+        if(this.cls===1){
+            node.getElementsByClassName('win-min')[0].addEventListener('click', (event) => {
+                if (node.classList.contains("win-disable")||this.isButtonDisabled(1)) { return; }
+                this.onMinimize(event);
+            });
+            node.getElementsByClassName('win-max')[0].addEventListener('click', (event) => {
+                if (node.classList.contains("win-disable")||this.isButtonDisabled(2)) { return; }
+                this.onMaxmise(event);
+            });
+        }
         node.getElementsByClassName('win-close')[0].addEventListener('click', (event) => {
             if (node.classList.contains("win-disable")||this.isButtonDisabled(0)) { return; }
             this.onClose(event);
