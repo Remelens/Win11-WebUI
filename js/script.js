@@ -115,6 +115,16 @@ class Win11Window {
     showWindow() {
         this.onShow($id(this.id));
     }
+    disableWindow(){
+        if(!this.isDisabled()){
+            $id(this.id).classList.add('win-disable');
+        }
+    }
+    enableWindow(){
+        if(this.isDisabled()){
+            $id(this.id).classList.remove('win-disable');
+        }
+    }
     //TODO:Need Fix
     foregroundWindow() {
         var foregroundNode = Win11Window.getForegroundWindow();
