@@ -227,9 +227,9 @@ input[type="range"].win11ui::-moz-range-thumb:active{
     transition: all 0.3s;
 }
 input[type="range"].win11ui::-webkit-slider-runnable-track{
-    background: none;
+    background: #007bff;
     border-radius: 1em;
-    box-shadow: inset 0px 0px 0px 4.5px #007bff;
+    height:5px;
 }
 input[type="range"].win11ui::-moz-range-progress {
     background: #007bff;
