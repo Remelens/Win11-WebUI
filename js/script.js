@@ -13,17 +13,18 @@ class=2
     close icon only
 */
 function onLoadFle() {
-    console.log(`%c Win11UI Window Manager %c v1.0 `, "color:black;background:#E9E9E9;", "background:#2B3141;color:#ccc;");
+    console.log('%c Win11UI Window Manager %c v1.0 ', "color:black;background:#E9E9E9;", "background:#2B3141;color:#ccc;");
 }
 class Win11Window {
     constructor(args) {
         this.id = 0;
         this.position = { x: 0, y: 0 };
-        this.size = { x: 300, y: 300 };
+        this.size = { x: 'auto', y: 'auto' };
         this.title = "Window";
         this.icon = '';
         this.content = '<p></p>';
         this.cls = 1;
+        this.mainStyle = '';
     }
 
     /*
@@ -77,8 +78,8 @@ class Win11Window {
         var parentWindow = document.createElement('div');
         parentWindow.className = "win11-window";
         parentWindow.id = this.id;
-        parentWindow.style.width = this.size.x;
-        parentWindow.style.height = this.size.y;
+        parentWindow.style.width = (typeof this.size.x==='number'?this.size.x.toString()+'px':this.size.x);
+        parentWindow.style.height = (typeof this.size.y==='number'?this.size.y.toString()+'px':this.size.y);;
         parentWindow.style.position = 'absolute';
         parentWindow.style.left = (typeof this.position.x==='number'?this.position.x.toString()+'px':this.position.x);
         parentWindow.style.top = (typeof this.position.y==='number'?this.position.y.toString()+'px':this.position.y);
@@ -94,7 +95,7 @@ class Win11Window {
                 </div>
                 <div class="win-buttonbar">${btnbar}</div>
             </div>
-            <div class="win-main">${this.content}</div>`;
+            <div class="win-main" style="${this.mainStyle}">${this.content}</div>`;
         document.body.appendChild(parentWindow);//TODO:Parent
         this.bindEventListeners(parentWindow);
         return parentWindow;
@@ -190,11 +191,6 @@ class Win11Window {
         return $id(this.id).classList.contains("win-disable");
     }
     bindEventListeners(node) {
-        //TODO:加上对win-disable类的支持
-        //win-disable类用于窗口不接收任何信息
-
-        //use in createWindow:
-        //this.bindEventListeners(parentNode);
         if(this.cls===1){
             node.getElementsByClassName('win-min')[0].addEventListener('click', (event) => {
                 if (node.classList.contains("win-disable")||this.isButtonDisabled(1)) { return; }

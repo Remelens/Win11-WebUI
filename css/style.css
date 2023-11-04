@@ -339,6 +339,7 @@ input[type="range" i].win11ui::-webkit-slider-container {
     top:0;
     left:0;
     height:100%;
+    overflow: scroll;
 }
 .win11-window h2{
     margin:0;
