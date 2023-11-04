@@ -80,7 +80,7 @@ input[type="number"].win11ui:focus,
 input[type="date"].win11ui:focus,
 input[type="time"].win11ui:focus,
 input.win11ui.text:focus,textarea.win11ui:focus{
-    box-shadow: inset 0px -2px 0px 0px #007bff;
+    box-shadow: inset 0px -2px 0px 0px #0070cc;
     transition: all 0.2s;
 }
 /*按钮css*/
