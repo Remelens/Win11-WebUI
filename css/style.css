@@ -344,6 +344,19 @@ input[type="range" i].win11ui::-webkit-slider-container {
 .win11-window h2{
     margin:0;
 }
+.win-maximum.win11-window{
+    border: none ;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+}
+.win-maximum.win11-window .win-header,.win-maximum.win11-window .win-main{
+    border-radius: 0;
+}
+.win-maximum.win11-window .win-header .win-buttonbar .win-uicon.win-close{
+    border-radius:0;
+}
 /*暗色模式*/
 @media (prefers-color-scheme: dark) {
     a:hover, a:active {

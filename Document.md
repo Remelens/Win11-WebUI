@@ -37,11 +37,11 @@ a.content='Hello,world!';
 ```
 ### Window Class
 ```js
-a.cls=1;
+a.cls=Win11Window.ALL_BTNS;
 ```
 Class:
-1. Min icon,Max icon and Close icon;  
-2. Only Close icon.
+1. Min icon,Max icon and Close icon;  `Win11Window.ALL_BTNS`
+2. Only Close icon. `Win11Window.ONLY_CLOSE`
 
 ### on...
 ```js
@@ -62,16 +62,16 @@ Functions:
 ### Enables/Disables
 #### Button
 ```js
-a.enableButton(1);
-a.disableButton(0);
+a.enableButton(Win11Window.BTN_MIN);
+a.disableButton(Win11Window.BTN_CLOSE);
 ```
 `enableButton(class)`|`disableButton(class)`
 
 class:
 
-0. close
-1. min
-2. max
+0. close `Win11Window.BTN_CLOSE`
+1. min `Win11Window.BTN_MIN`
+2. max `Win11Window.BTN_MAX`
 
 #### Window
 ```js

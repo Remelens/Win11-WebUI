@@ -16,6 +16,11 @@ function onLoadFle() {
     console.log('%c Win11UI Window Manager %c v1.0 ', "color:black;background:#E9E9E9;", "background:#2B3141;color:#ccc;");
 }
 class Win11Window {
+    static ONLY_CLOSE=2;
+    static ALL_BTNS=1;
+    static BTN_CLOSE=0;
+    static BTN_MIN=1;
+    static BTN_MAX=2;
     constructor(args) {
         this.id = 0;
         this.position = { x: 0, y: 0 };
@@ -23,7 +28,7 @@ class Win11Window {
         this.title = "Window";
         this.icon = '';
         this.content = '<p></p>';
-        this.cls = 1;
+        this.cls = Win11Window.ALL_BTNS;
         this.mainStyle = '';
     }
 
@@ -46,9 +51,25 @@ class Win11Window {
         element.style.display='flex';
     }
     onMinimize() {
-        this.hideWindow();
+        if(this.isMaxWindow()){
+            this.updateWindow();
+        }
+        if(this.isMinWindow()){
+            this.unMinWindow();
+        }else{
+            this.minWindow();
+        }
     }
-    onMaxmise() { }
+    onMaxmise() {
+        if(this.isMinWindow()){
+            this.updateWindow();
+        }
+        if(this.isMaxWindow()){
+            this.unMaxWindow();
+        }else{
+            this.maxWindow();
+        }
+    }
     onClose() {
         this.removeWindow();
     }
@@ -115,6 +136,33 @@ class Win11Window {
     }
     showWindow() {
         this.onShow($id(this.id));
+    }
+    maxWindow(){
+        $id(this.id).classList.add('win-maximum');
+        $id(this.id).querySelector('.win-max').querySelector('img').src='./images/maxmin.png' 
+    }
+    unMaxWindow(){
+        if(this.isMaxWindow()){
+            $id(this.id).classList.remove('win-maximum');
+            $id(this.id).querySelector('.win-max').querySelector('img').src='./images/max.png' 
+        }
+    }
+    minWindow(){
+        $id(this.id).querySelector('.win-main').style.display='none';
+        $id(this.id).querySelector('.win-header').style.height='35px';
+        $id(this.id).querySelector('.win-header').style.borderRadius='6px';
+        $id(this.id).querySelector('.win-title').style.marginRight='5px';
+        $id(this.id).querySelector('.win-close').style.borderRadius='0 5px 5px 0';
+        $id(this.id).querySelector('.win-min').querySelector('img').src='./images/maxmin.png'
+    }
+    unMinWindow(){
+        this.updateWindow();
+    }
+    isMinWindow(){
+        return $id(this.id).querySelector('.win-main').style.display==='none';
+    }
+    isMaxWindow(){
+        return $id(this.id).classList.contains('win-maximum');
     }
     disableWindow(){
         if(!this.isDisabled()){
