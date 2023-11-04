@@ -41,6 +41,8 @@ textarea.win11ui{
     box-sizing: border-box;
     color:#000;
     -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
 }
 textarea.win11ui {
     resize: vertical;
@@ -51,6 +53,9 @@ textarea.win11ui,input.win11ui{
     -webkit-appearance: none;
     -moz-appearance: none;
     margin:0;
+}
+textarea.win11ui,input.win11ui,button.win11ui{
+    font-family:Menlo, Monaco, Consolas, "Lucida Console", "Ubuntu Mono","Microsoft YaHei UI","PingFang SC","Noto Sans CJK SC", "SimHei";
 }
 .input.win11ui,
 input[type="text"].win11ui,
@@ -64,7 +69,6 @@ input.text.win11ui,textarea.win11ui{
     border-radius: 3px;
     border:none;
     box-shadow: inset 0px -1px 0px 0px #777777;
-    -webkit-box-shadow: inset 0px -1px 0px 0px #777777;
     transition: all 0.2s;
 }
 .input.win11ui:hover,
@@ -76,8 +80,7 @@ input[type="number"].win11ui:focus,
 input[type="date"].win11ui:focus,
 input[type="time"].win11ui:focus,
 input.win11ui.text:focus,textarea.win11ui:focus{
-    box-shadow: inset 0px -1px 0px 0px #007bff;
-    -webkit-box-shadow: inset 0px -2px 0px 0px #007bff;
+    box-shadow: inset 0px -2px 0px 0px #007bff;
     transition: all 0.2s;
 }
 /*按钮css*/
@@ -141,19 +144,19 @@ input[type="radio"].win11ui::after {
     box-shadow: inset 0px 0px 0px 1px #aaa;
     border-radius: 50%;
     background-color: #f7f7f7;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 input[type="radio"].win11ui:hover::after{
     box-shadow: inset 0px 0px 0px 1px #429ce3;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 input[type="radio"].win11ui:checked:hover::after{
     box-shadow: inset 0px 0px 0px 3.5px #429ce3;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 input[type="radio"].win11ui:checked::after {
-    box-shadow: inset 0px 0px 0px 4.5px #007bff;
-    transition: all 0.3s;
+    box-shadow: inset 0px 0px 0px 4.5px #196EBF;
+    transition: all 0.2s;
     background-color: white;
 }
 input[type="checkbox"].win11ui{
@@ -163,17 +166,17 @@ input[type="checkbox"].win11ui{
     box-shadow: inset 0px 0px 0px 1px #aaa;
     border-radius: 4px;
     background-color: #fff;
-    transition: all 0.3s;
+    transition: all 0.2s;
     margin:0;
 }
 input[type="checkbox"].win11ui:hover{
     box-shadow: inset 0px 0px 0px 1px #429ce3;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 input[type="checkbox"].win11ui:checked{
-    box-shadow: inset 0px 0px 0px 1px #007bff;
-    background-color: #007bff;
-    transition: all 0.3s;
+    box-shadow: inset 0px 0px 0px 1px #196EBF;
+    background-color: #196EBF;
+    transition: all 0.2s;
 }
 input[type="checkbox"].win11ui:checked::after {
     content: "";
@@ -182,63 +185,76 @@ input[type="checkbox"].win11ui:checked::after {
     height: 8px;
     box-shadow: inset -1px -1px 0px 0.5px #fff;
     transform: rotate(45deg);
-    margin-left:35%;
-    margin-top:18%;
+    margin-left:36%;
+    margin-top:17%;
     float:left;
 }
 /*滑块样式*/
 input[type="range"].win11ui{
     background:none;
-}
-input[type="range"].win11ui::-webkit-slider-thumb{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    box-shadow: inset 0px 0px 0px 4.5px #007bff;
-    border:0px;
-    border-radius: 50%;
-    background-color: white;
-    transition: all 0.3s;
+    height:5px;
 }
 input[type="range"].win11ui::-moz-range-thumb{
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    box-shadow: inset 0px 0px 0px 4.5px #007bff;
+    width: 18px;
+    height: 18px;
+    box-shadow: inset 0px 0px 0px 4px #fff;
     border:0px;
     border-radius: 50%;
-    background-color: white;
-    transition: all 0.3s;
-}
-input[type="range"].win11ui::-webkit-slider-thumb:hover{
-    box-shadow: inset 0px 0px 0px 4.5px #429ce3;
-    transition: all 0.3s;
+    background-color: #196EBF;
+    transition: all 0.2s;
+    border:0.5px solid #ccc;
 }
 input[type="range"].win11ui::-moz-range-thumb:hover{
-    box-shadow: inset 0px 0px 0px 4.5px #429ce3;
-    transition: all 0.3s;
-}
-input[type="range"].win11ui::-webkit-slider-thumb:active{
-    box-shadow: inset 0px 0px 0px 3.5px #429ce3;
-    transition: all 0.3s;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    transition: all 0.2s;
+    background-color: #429ce3;
 }
 input[type="range"].win11ui::-moz-range-thumb:active{
-    box-shadow: inset 0px 0px 0px 3.5px #429ce3;
-    transition: all 0.3s;
-}
-input[type="range"].win11ui::-webkit-slider-runnable-track{
-    background: #007bff;
-    border-radius: 1em;
-    height:5px;
-    padding:5px 0;
-    /*Love u webkit...*/
+    box-shadow: inset 0px 0px 0px 5px #fff;
+    transition: all 0.2s;
+    background-color: #429ce3;
 }
 input[type="range"].win11ui::-moz-range-progress {
-    background: #007bff;
+    background: #196EBF;
 }
 input[type="range"].win11ui::-moz-range-track{
-    background:#fff;
+    background:#999;
     border-radius: 1em;
+}
+input[type="range"].win11ui::-webkit-slider-thumb{
+    width: 18px;
+    height: 18px;
+    box-shadow: inset 0px 0px 0px 3.5px #fff;
+    border:0px;
+    border-radius: 50%;
+    background-color: #196EBF;
+    transition: all 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    margin-top: -7px;
+    border:0.5px solid #ccc;
+}
+input[type="range"].win11ui::-webkit-slider-thumb:hover{
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    transition: all 0.2s;
+    background-color: #429ce3;
+}
+input[type="range"].win11ui::-webkit-slider-thumb:active{
+    box-shadow: inset 0px 0px 0px 4.5px #fff;
+    transition: all 0.2s;
+    background-color: #429ce3;
+}
+
+input[type="range"].win11ui::-webkit-slider-runnable-track {
+    height: 4px;
+    background: #196EBF;
+    border-radius: 1em;
+}
+input[type="range" i].win11ui::-webkit-slider-container {
+    height: 20px;
+    overflow: hidden;
 }
 /*窗口样式*/
 .win11-window{
@@ -249,6 +265,7 @@ input[type="range"].win11ui::-moz-range-track{
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 100px #0003;
+    border:1px solid #aaa8;
 }
 .win11-window .win-header{
     display: flex;
@@ -266,6 +283,7 @@ input[type="range"].win11ui::-moz-range-track{
     -webkit-user-select: none;
     -ms-user-select: none;
     -khtml-user-select: none;
+    -webkit-user-drag: none;
     user-select: none;
 }
 .win11-window .win-header .win-title {
@@ -302,7 +320,7 @@ input[type="range"].win11ui::-moz-range-track{
     background:#aaaaaa55;
 }
 .win11-window .win-header .win-buttonbar .win-uicon.win-close{
-    border-radius: 0 6px 0 0;
+    border-radius: 0 5px 0 0;
 }
 .win11-window .win-header .win-buttonbar .win-uicon.win-close:hover{
     transition: all 0.2s;
@@ -354,8 +372,11 @@ input[type="range"].win11ui::-moz-range-track{
         background:#2b314188;
         color:#fff;
     }
+    :root{
+        --window-background:#272727;
+    }
     .win11-window .win-main{
-        background:#3c3c3c;
+        background:var(--window-background);
         color:#ccc;
     }
     .win11-window .win-header .win-buttonbar .win-uicon img{
@@ -374,8 +395,19 @@ input[type="range"].win11ui::-moz-range-track{
     input[type="time"].win11ui,
     textarea.win11ui{
         width: 100%;
-        background: #303030;
+        background: #363636;
         color:#eee;
+    }
+    .input.win11ui:hover,
+    input[type="text"].win11ui:focus,
+    input[type="email"].win11ui:focus,
+    input[type="url"].win11ui:focus,
+    input[type="password"].win11ui:focus,
+    input[type="number"].win11ui:focus,
+    input[type="date"].win11ui:focus,
+    input[type="time"].win11ui:focus,
+    input.win11ui.text:focus,textarea.win11ui:focus{
+        box-shadow: inset 0px -2px 0px 0px #4CC2FF;
     }
     input[type="checkbox"].win11ui{
         background-color: inherit;
@@ -388,18 +420,59 @@ input[type="range"].win11ui::-moz-range-track{
         box-shadow: inset 0px 0px 0px 1px #aaa;
         border-radius: 50%;
         background-color: inherit;
-        transition: all 0.2s;
     }
     input[type="radio"].win11ui:hover::after{
-        box-shadow: inset 0px 0px 0px 1px #007bff;
-        transition: all 0.2s;
+        box-shadow: inset 0px 0px 0px 1px #4CC2FF;
     }
     input[type="radio"].win11ui:checked:hover::after{
-        box-shadow: inset 0px 0px 0px 3.5px #007bff;
-        transition: all 0.2s;
+        box-shadow: inset 0px 0px 0px 3.5px #4CC2FF;
     }
     input[type="radio"].win11ui:checked::after {
-        box-shadow: inset 0px 0px 0px 4.5px #007bff;
-        transition: all 0.2s;
+        box-shadow: inset 0px 0px 0px 4.5px #4CC2FF;
+        background:inherit;
     }    
+    input[type="checkbox"].win11ui:hover{
+        box-shadow: inset 0px 0px 0px 1px #3ea1d2;
+        transition: all 0.2s;
+    }
+    input[type="checkbox"].win11ui:checked{
+        box-shadow: inset 0px 0px 0px 1px #4CC2FF;
+        background-color: #4CC2FF;
+        transition: all 0.2s;
+    }
+    input[type="checkbox"].win11ui:checked::after {
+        box-shadow: inset -1px -1px 0px 0.5px var(--window-background);
+    }
+    input[type="range"].win11ui::-moz-range-thumb{
+        box-shadow: inset 0px 0px 0px 4px #444;
+        background-color: #4CC2FF;
+        border:0.5px solid #666;
+    }
+    input[type="range"].win11ui::-moz-range-thumb:hover{
+        box-shadow: inset 0px 0px 0px 2px #444;
+        background-color: #4CC2FF;
+    }
+    input[type="range"].win11ui::-moz-range-thumb:active{
+        box-shadow: inset 0px 0px 0px 5px #444;
+        background-color: #4CC2FF;
+    }
+    input[type="range"].win11ui::-moz-range-progress {
+        background-color: #4CC2FF;
+    }
+    input[type="range"].win11ui::-webkit-slider-thumb{
+        box-shadow: inset 0px 0px 0px 3.5px #444;
+        background-color: #4CC2FF;
+        border:0.5px solid #666;
+    }
+    input[type="range"].win11ui::-webkit-slider-thumb:hover{
+        box-shadow: inset 0px 0px 0px 2px #444;
+        background-color: #4CC2FF;
+    }
+    input[type="range"].win11ui::-webkit-slider-thumb:active{
+        box-shadow: inset 0px 0px 0px 4.5px #444;
+        background-color: #4CC2FF;
+    }
+    input[type="range"].win11ui::-webkit-slider-runnable-track {
+        background-color: #4CC2FF;
+    }
 }
